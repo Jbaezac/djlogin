@@ -1,13 +1,32 @@
 {% extends 'page/base.html' %}
-<html>
-    <head>
-        <title>Ola's blog</title>
-    </head>
-    <body>
 
-           <p>Hi there!</p>
-        <p>It works!</p>
-    </body>
-</html>
+{% block content %}
+     {% if user.is_authenticated %}
+  Hi {{ user.username }}!
+  <p><a href="{% url 'logout' %}">logout</a></p>      
+           
+            <div class="regular slider">
+             
+                <div class="col-xs-12 col-md-8">
+                    <div class="card">
+                        <a class="magnific-popup" href="https://www.chileanrentacar.cl/wp-content/uploads/2018/04/mazda-3-400x256.jpg">
+                            <img src="https://www.chileanrentacar.cl/wp-content/uploads/2018/04/mazda-3-400x256.jpg" alt="">
+                        </a>
+                        <div class="card-info">
+                           <h1>PICO PARA EL Q LEE</H1>
+                            <span><i class="fas fa-users"></i> 5 personas  <i class="fa fa-briefcase ml-5"></i> 420 LT.</span>
+                            <br>
+                            <a href="javascript:void(0)" data-action="mazda-3-full-elite-AT" class="detalle"><i class="fa fa-caret-right"></i>Ver Detalle </a>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+        {% else %}
+            
+       {% endif %} 
+    
 
+    <!--ojo python toma los valores de codigo cometando-->
 
+{% endblock %}

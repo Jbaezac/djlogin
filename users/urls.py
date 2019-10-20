@@ -5,5 +5,6 @@ from .views import SignUpView
 
 urlpatterns = [
     path('signup/', SignUpView.as_view(), name='signup'),
-    path('nada/',views.prueba_visual, name='prueba_visual')
+    path('home/',views.prueba_visual, name='prueba_visual'),
+   
 ]

@@ -109,7 +109,7 @@
                         <li class="navbar-item"><a class="nav-link" href="#sec-servicios">Servicios</a></li>
                         <li class="navbar-item"><a class="nav-link" href="#sec-otros">Otros Destacados</a></li>
                         <li class="navbar-item"><a class="nav-link" href="#sec-partners">Nuestros Socios</a></li>
-                        <li class="navbar-item"><a class="nav-link" href="login.html">Ingresar</a></li>
+                        <li class="navbar-item"><a class="nav-link" href="{% url 'login' %}">Ingresar</a></li>
                     </ul>
                 </nav>
             </div>
@@ -391,8 +391,8 @@
                         <li class="mr-5"><a href="#sec-servicios">Servicios</a></li>
                         <li class="mr-5"><a href="#sec-otros">Otros Desacados</a></li>
                         <li class="mr-5"><a href="#sec-partners">Nuestros Socios</a></li>
-                        <li class="mr-5"><a href="javascript:void(0)">Ingresar</a></li>
-                        <li class="mr-5"><a href="javascript:void(0)">Registrate</a></li>
+                        <li class="mr-5"><a href="{% url 'login' %}">Ingresar</a></li>
+                        <li class="mr-5"><a href="{% url 'signup' %}">Registrate</a></li>
                         <li class="mr-5"><a href="javascript:void(0)">Contactanos</a></li>
                         <li class="mr-5"><a href="javascript:void(0)">Ref 01</a></li>
                         <li class="mr-5"><a href="javascript:void(0)">Ref 02</a></li>
