@@ -50,39 +50,8 @@ $(function () {
     $('[name="ipt_region"]').append('<option value="' + key + '">' + data.region + '</option>');
   });
 
-  /*validacion de fechas */
-  $.validator.addMethod("maxDate", function (e) {
-    var curDate = $('#date_start').datepicker("getDate");
-    var maxDate = new Date();
-    maxDate.setDate(maxDate.getDate());
-    maxDate.setHours(0, 0, 0, 0); // clear time portion for correct results
-    console.log(this.value, curDate, maxDate);
-    if (curDate > maxDate) {
-      $(this).datepicker("setDate", maxDate);
-      return false;
-    }
-    return true;
-  });
-
-  $('#date_start').datepicker({
-    dateFormat: 'dd.mm.yy',
-    minDate: '-18y',
-    maxDate: "+0",
-    onClose: function () { $(this).valid(); },
-  });
-
-  $('input[name="ipt_fono"]').mask('+569-000 00000');
-
-
+  
   !function (a, b) { "function" == typeof define && define.amd ? define(function () { return a.Rut = b() }) : "object" == typeof exports ? module.exports = b() : a.Rut = b() }(this, function () { var a; return a = function () { function a(a, b) { this.setRut(a, b) } var b, c, d; return a.prototype.setRut = function (a, c) { if (null == c && (c = !1), "string" != typeof a) throw new Error("rut tiene que ser string"); this.rut = c ? b(a) : b(a.substr(0, a.length - 1)), this.checkDigit = c ? d(a) : a.substr(a.length - 1).toUpperCase(), this.isValid = this.validate() }, a.prototype.validate = function () { var a; return /([0-9]|k)/i.test(this.checkDigit) ? (a = d(this.rut), this.checkDigit.toLowerCase() === a.toLowerCase()) : !1 }, a.prototype.getCleanRut = function () { return this.rut + "" + this.checkDigit }, a.prototype.getNiceRut = function (a) { return null == a && (a = !0), a ? c(this.rut) + "-" + this.checkDigit : this.rut + "-" + this.checkDigit }, b = function (a) { return a.replace(/(\.|\-)/g, "") }, d = function (a) { var b, c, d, e; for (e = 0, b = a.length, c = 2; --b >= 0;)e += a.charAt(b) * c, 8 === ++c && (c = 2); return d = e % 11, 1 === d ? "K" : 0 === d ? "0" : String(11 - d) }, c = function (a) { return a.split("").reverse().reduce(function (a, b, c) { return a = 0 === c % 3 ? b + "." + a : b + "" + a }) }, a }() });
-
-
-
-  jQuery.validator.addMethod("letras", function (value, element) {
-    return this.optional(element) || /^[a-z\s]+$/i.test(value);
-  }, "Ingrese solo carácteres no numeros");
-
-
 
 
   /*Configuración jquery validation*/
